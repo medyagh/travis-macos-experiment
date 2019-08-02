@@ -1,0 +1,13 @@
+sudo: required
+language: objective-c
+
+# 10.13 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
+osx_image: xcode9.3
+
+script:
+    - export PATH=$PATH:/usr/local/bin/
+    - ./install_and_start_docker.sh
+    - ./install_docker_hyperkit_on_travis.sh
+    - ./install_minikube_hyperkit.sh
+    - ./start_minikube.sh
+    - ./debug_minikube.sh
